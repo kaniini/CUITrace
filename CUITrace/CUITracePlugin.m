@@ -8,11 +8,26 @@
 
 #import "CUITracePlugin.h"
 
+typedef CFTypeRef CUIRendererRef;
+extern void CUIDraw(CUIRendererRef renderer, CGRect frame, CGContextRef context, CFDictionaryRef object, CFDictionaryRef *unk);
+
+typedef void (*CUIDrawProc)();
+static CUIDrawProc CUIDrawOriginalProc;
+
+static void CUIDrawOverride(CUIRendererRef renderer, CGRect frame, CGContextRef context, CFDictionaryRef object, CFDictionaryRef *unk)
+{
+    NSLog(@"%@", (__bridge NSDictionary *) object);
+    CUIDrawOriginalProc(renderer, frame, context, object, unk);
+}
+
 @implementation CUITracePlugin
 
 + (void) load
 {
     NSLog(@"CUITrace initializing");
+    mach_override_ptr((void *)&CUIDraw,
+                      (void *)&CUIDrawOverride,
+                      (void **)&CUIDrawOriginalProc);
     NSLog(@"CUITrace loaded");
 }
 
