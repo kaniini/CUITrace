@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 William Pitcock. All rights reserved.
 //
 
+#import "mach_override.h"
+
 @interface CUITracePlugin : NSObject
 
 @end
