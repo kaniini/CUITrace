@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2AB5FD7168D381B001CFD87 /* CoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AB5FD6168D381B001CFD87 /* CoreUI.framework */; };
 		D2C1AAF6168D324700C8CEFA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C1AAF5168D324700C8CEFA /* Cocoa.framework */; };
 		D2C1AB00168D324700C8CEFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2C1AAFE168D324700C8CEFA /* InfoPlist.strings */; };
 		D2C1AB09168D329D00C8CEFA /* CUITracePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C1AB08168D329D00C8CEFA /* CUITracePlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2AB5FD6168D381B001CFD87 /* CoreUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreUI.framework; path = ../../../../../System/Library/PrivateFrameworks/CoreUI.framework; sourceTree = "<group>"; };
 		D2C1AAF2168D324700C8CEFA /* CUITrace.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUITrace.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C1AAF5168D324700C8CEFA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D2C1AAF8168D324700C8CEFA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -31,6 +33,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2C1AAF6168D324700C8CEFA /* Cocoa.framework in Frameworks */,
+				D2AB5FD7168D381B001CFD87 /* CoreUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 		D2C1AAE7168D324700C8CEFA = {
 			isa = PBXGroup;
 			children = (
+				D2AB5FD6168D381B001CFD87 /* CoreUI.framework */,
 				D2C1AAFB168D324700C8CEFA /* CUITrace */,
 				D2C1AAF4168D324700C8CEFA /* Frameworks */,
 				D2C1AAF3168D324700C8CEFA /* Products */,
@@ -230,6 +234,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CUITrace/CUITrace-Prefix.pch";
 				INFOPLIST_FILE = "CUITrace/CUITrace-Info.plist";
@@ -243,6 +251,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CUITrace/CUITrace-Prefix.pch";
 				INFOPLIST_FILE = "CUITrace/CUITrace-Info.plist";
@@ -271,6 +283,7 @@
 				D2C1AB06168D324700C8CEFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
