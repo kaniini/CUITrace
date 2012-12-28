@@ -25,6 +25,17 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2012 William Pitcock. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
-	<string></string>
+	<string>CUITracePlugin</string>
+	<key>SIMBLTargetApplications</key>
+	<array>
+		<dict>
+			<key>BundleIdentifier</key>
+			<string>com.apple.mail</string>
+			<key>MaxBundleVersion</key>
+			<string>1499</string>
+			<key>MinBundleVersion</key>
+			<string>1499</string>
+		</dict>
+	</array>
 </dict>
 </plist>
